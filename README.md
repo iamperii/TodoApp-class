@@ -1,2 +1,1 @@
-# to-do-list
-To do list.
+# TO-DO LIST.
