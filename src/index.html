@@ -9,7 +9,7 @@
 			href="../images/todo-list-svgrepo-com.svg"
 			type="image/x-icon"
 		/>
-		<title>To do list</title>
+		<title>To-Do List</title>
 	</head>
 	<body>
 		<div class="container">
@@ -26,7 +26,11 @@
 				</div>
 				<div class="form">
 					<form action="">
-						<input type="text" placeholder="Write, your todos..." />
+						<input
+							type="text"
+							placeholder="Write your todos..."
+							id="todo-input"
+						/>
 						<label for="">
 							<img src="../images/cancel.svg" alt="" class="cancel-image" />
 						</label>
@@ -36,7 +40,7 @@
 					<div class="add">+</div>
 					<div class="show">Добавить</div>
 				</div>
-				<div class="todo-list"></div>
+				<ol id="todo-list"></ol>
 			</div>
 		</div>
 		<script src="./script.js"></script>
