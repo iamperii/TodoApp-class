@@ -22,7 +22,7 @@ body {
 }
 .container {
 	/* min-height: 460px; */
-	/* width: 30%; */
+	width: 50%;
 	position: absolute;
 	top: 150px;
 	width: 430px;
@@ -150,8 +150,9 @@ input:focus {
 ul {
 	/* border: 1px dashed #833ae0; */
 	position: relative;
+	width: 350px;
 	/* padding: 20px; */
-	width: 100%;
+	/* width: 100%; */
 	/* border: 1px solid #cecece; */
 }
 ul li {
