@@ -98,9 +98,10 @@ input:focus {
 	gap: 20px;
 	background-color: #833ae0;
 	margin-bottom: 20px;
+	transition: 0.3;
 }
 .submit:hover {
-	transition: 0.3s ease;
+	transition: 0.3s ease-in;
 	transform: translateY(-1px);
 	box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 	cursor: pointer;
@@ -197,12 +198,12 @@ ul li {
 
 .show:hover {
 	transform: scale(1.2);
-	color: aquamarine;
+	/* color: aquamarine; */
 	margin-right: 30px;
 }
 .error-message {
 	color: red;
 	font-size: 0.9em;
 	margin-top: 8px;
-	display: none; /* Hidden by default */
+	display: none;
 }
