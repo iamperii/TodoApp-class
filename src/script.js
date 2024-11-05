@@ -14,7 +14,6 @@ class TodoApp {
 		this.showButton = document.querySelector('#show-button');
 		this.submitContainer = document.querySelector('.submit');
 		this.formContainer = document.querySelector('.form');
-
 		this.todoList.classList.add('hidden');
 
 		this.addButton.addEventListener('click', () => {
@@ -54,6 +53,12 @@ class TodoApp {
 			this.clearInput();
 			this.isSortedAsc = false;
 			errorMessage.style.display = 'none';
+
+			// this.formContainer.style.display = 'none';
+
+			if (this.todos.length > 0) {
+				this.sortButton.style.display = 'block';
+			}
 		} else {
 			errorMessage.textContent = 'Please add a to-do';
 			errorMessage.style.display = 'block';
@@ -76,7 +81,6 @@ class TodoApp {
 		todoItem.addEventListener('dragstart', (e) => this.dragStart(e));
 		todoItem.addEventListener('dragover', (e) => this.dragOver(e));
 		todoItem.addEventListener('drop', (e) => this.drop(e));
-
 		todoItem.addEventListener('dblclick', () =>
 			this.editTodoItem(todoItem, index)
 		);
@@ -89,7 +93,7 @@ class TodoApp {
 		this.todoList.appendChild(todoItem);
 
 		deleteButton.addEventListener('click', () => {
-			this.todos = this.todos.filter((todo, i) => i !== index);
+			this.todos.splice(index, 1);
 			this.displayTodos();
 		});
 	}
@@ -134,7 +138,6 @@ class TodoApp {
 				this.todos[index] = newText;
 				this.displayTodos();
 			} else {
-				alert('Todo cannot be empty');
 				this.displayTodos();
 			}
 		};
@@ -171,27 +174,22 @@ class TodoApp {
 	}
 
 	changeIconToBlack() {
-		if (this.isSortedAsc) {
-			this.sortButton.src = '../svg/up-sort-black.svg';
-		} else {
-			this.sortButton.src = '../svg/down-sort-black.svg';
-		}
+		this.sortButton.src = this.isSortedAsc
+			? '../svg/up-sort-black.svg'
+			: '../svg/down-sort-black.svg';
 	}
 
 	changeIconToWhite() {
-		if (this.isSortedAsc) {
-			this.sortButton.src = '../svg/up-sort.svg';
-		} else {
-			this.sortButton.src = '../svg/down-sort.svg';
-		}
+		this.sortButton.src = this.isSortedAsc
+			? '../svg/up-sort.svg'
+			: '../svg/down-sort.svg';
 	}
 
 	toggleView() {
 		this.formContainer.style.display = 'none';
-		// this.sortButton.style.display = 'none';
-		if (this.todos.length === 0) {
-			this.sortButton.style.display = 'none';
-		}
+		// if (this.todos.length === 0) {
+		// 	this.sortButton.style.display = 'none';
+		// }
 	}
 
 	showList() {
