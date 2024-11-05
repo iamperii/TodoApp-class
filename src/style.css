@@ -36,6 +36,7 @@ body {
 	gap: 30px;
 	/* padding: 20px; */
 	position: relative;
+	min-height: 300px;
 }
 .container-second {
 	border-radius: 10px;
@@ -198,4 +199,10 @@ ul li {
 	transform: scale(1.2);
 	color: aquamarine;
 	margin-right: 30px;
+}
+.error-message {
+	color: red;
+	font-size: 0.9em;
+	margin-top: 8px;
+	display: none; /* Hidden by default */
 }

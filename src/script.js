@@ -46,13 +46,17 @@ class TodoApp {
 
 	addTodo() {
 		const todoText = this.inputField.value.trim();
+		const errorMessage = document.querySelector('.error-message');
+
 		if (todoText) {
 			this.todos.push(todoText);
 			this.displayTodos();
 			this.clearInput();
 			this.isSortedAsc = false;
+			errorMessage.style.display = 'none';
 		} else {
-			alert('Please add a to-do');
+			errorMessage.textContent = 'Please add a to-do';
+			errorMessage.style.display = 'block';
 		}
 	}
 
